@@ -1,52 +1,27 @@
-<!-- index.html -->
-<!doctype html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-    <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-      }
-      #menu {
-        position: fixed;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: none;
-        gap: 12px;
-        flex-direction: column;
-        align-items: center;
-        z-index: 999;
-      }
-      #menu.visible {
-        display: flex;
-      }
-      .btn {
-        background: rgba(255, 255, 255, 0.9);
-        border: none;
-        padding: 12px 28px;
-        border-radius: 30px;
-        font-size: 16px;
-        cursor: pointer;
-        backdrop-filter: blur(6px);
-      }
-    </style>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
-    <div id="menu">
-      <button class="btn" onclick="location.href = './ubicacion.html'">
-        📍 Ubicación
-      </button>
-      <button class="btn" onclick="location.href = './nosotros.html'">
-        👋 Sobre nosotros
-      </button>
-      <button class="btn" onclick="location.href = './contacto.html'">
-        ✉️ Contacto
-      </button>
-    </div>
-    <script src="main.js"></script>
+    <a-scene
+      mindar-image="imageTargetSrc: ./targets.mind;"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-plane
+          color="blue"
+          opaciy="0.5"
+          position="0 0 0"
+          height="0.552"
+          width="1"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+    </a-scene>
   </body>
 </html>

@@ -16,7 +16,7 @@ scene.add(light);
 
 // Cargar logo 3D
 const loader = new GLTFLoader();
-loader.load("./logo.glb", (gltf) => {
+loader.load("./stadio.glb", (gltf) => {
   const logo = gltf.scene;
   logo.scale.set(0.1, 0.1, 0.1); // ajusta el tamaño
 
